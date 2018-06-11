@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>系统学习html5和Css3</title>
+    <meta name="description" content="系统学习html5和Css3">
+    <meta name="keywords" content="html5,css3">
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body onload="init()">
+    <header>
+        <ul id="nav" class="nav">
+            <li class="item">首页</li>
+            <li class="item">随笔</li>
+            <li class="item">新闻</li>
+            <li class="item">论坛</li>
+            <li class="item">招聘</li>
+            <li class="item">公告</li>
+        </ul>
+        <a href="" class="login">登录</a>
+        <a href="" class="register">注册</a>
+    </header>
+    <nav>
+        <h4>窗口大小：</h4>
+        <p>window.innerHeight = window.innerHeight</p>
+        <p>window.innerWidth = {window.innerWidth}</p>
+        <p>window.outerHeight = {window.outerHeight}</p>
+        <p>window.outerWidth = {window.outerWidth}</p>
+        <button onClick={this.open}>open a url</button>
+        <pre>预定义文本</pre>
+        <blockquote>块级引用文本</blockquote>
+        <p>随便写的一段话啊，主要就是展示下
+            <cite>行内引用文本</cite>的样子</p>
+        <i>斜体</i>
+        <p>x<sup>2</sup> + S<sub>1</sub></p>
+        <form id="form1" method="get" action="" encType="">
+            <label for="username">姓名：</label>
+            <input type="text" name="username" placeholder="请输入3-5未的用户名" maxLength="5" minLength="3" />
+            <br/> 文件上传域：
+            <input name="file" type="file" />
+            <br/> 性别：
+            <input type="checkbox" name="sex" value="男" />男
+            <input type="checkbox" name="sex" value="女" />女
+            <br/>
+            <input id="submit_img" type="image" src="opacity.jpg" onClick="saveStorage()" />
+            <br/>
+            <input type="reset" value="重设表单" />
+        </form>
+    </nav>
+    <script type="text/javascript">
+    var nav = document.getElementById('nav');
+    for (var i = 0; i < 2; i++) {
+    	var e = document.createElement('li')
+    	e.className = 'item'
+    	e.innerHTML = 'item' + i
+    	nav.appendChild(e)
+     }
+    function init(){
+    	if(localStorage.getItem('username')){
+    		// alert('storage')
+    		var user = localStorage.getItem('username');
+    		document.getElementById('form1').username.value = user;
+    	}
+    }
+    var saveStorage = function() {
+        // alert('username')
+        localStorage = localStorage;
+        // alert('zjl')
+        var username = document.getElementById('form1').username.value;
+        localStorage.setItem('username', username)
+    }
+    </script>
+</body>
+
+</html>
