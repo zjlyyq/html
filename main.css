@@ -83,7 +83,7 @@ a{
 .not{
 	width: 25px;
 	height:4px;
-	background: #000;
+	background: #bbb;
 	display: inline-block;
 }
 .not:hover{

@@ -45,10 +45,12 @@ function changeItem2(e) {
     nav.style.transform = "translate(" + -1024 * (currentIndex%4) + "px)";
     timer = setInterval(f,4000);
 }
+// 初始化工作
 function init(){
     //获得轮播图对象
     nav = document.getElementById('nav');
     nots = document.getElementsByClassName('not');
+    addClass(nots[0],'current')
     if(localStorage.getItem('username')){
         // alert('storage')
         var user = localStorage.getItem('username');
