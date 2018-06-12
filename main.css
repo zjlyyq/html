@@ -5,31 +5,91 @@
  * @date    2018-06-10 18:32:47
  * @version $Id$
  */
+
 body{
 	margin: 0;
 	padding: 0 10px 0 10px;
 }
-.nav>.item{
+
+header{
+	position: relative;
+	background: #ddd;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+}
+
+.banner_container{
+	background: #aaa;
+	overflow: hidden;
+	width: 1024px;
+}
+
+.nav>.banner{
+	margin: 0;
+	padding: 0;
 	display: inline;
 }
+
 .nav{
-	background:#ddd;
+	margin: 0;
+	padding: 0;
 	display: flex;
-	justify-content: space-around;
+	width: auto;
+	/*overflow: hidden;*/
+	justify-content: flex-start;
+	transition: all 2s;
 }
+
+img{
+	width: 1024px;
+}
+
 /*窗口宽度小于480时的样式*/
 @media screen and (max-width: 480px){
 	.nav{
-		background:#fff;
+		/*background:#fff;*/
 	}
 }
+
 /*窗口宽度大于1000时的样式*/
 @media screen and (min-width: 1000px){
 	.nav{
-		background:#aaa;
+		/*background:#aaa;*/
 	}
 }
 
 a{
 	display: inline-block;
+}
+
+.arrows{
+	position: absolute;
+	top: 150px;
+	width: 90%;
+	z-index: 9999;
+}
+
+.arrow{
+	font-size: 3em;
+    color: seashell;
+}
+
+.nots{
+	position: absolute;
+	bottom: 20px;
+}
+.not{
+	width: 25px;
+	height:4px;
+	background: #000;
+	display: inline-block;
+}
+.not:hover{
+	background: #fff;
+	border-radius: 5px;
+}
+.current{
+	background: #fff;
 }

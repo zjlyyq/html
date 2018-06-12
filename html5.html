@@ -8,20 +8,29 @@
     <meta name="description" content="系统学习html5和Css3">
     <meta name="keywords" content="html5,css3">
     <link href="main.css" rel="stylesheet">
+    <script type="text/javascript"  src="script/main2.js"></script>
 </head>
 
 <body onload="init()">
     <header>
-        <ul id="nav" class="nav">
-            <li class="item">首页</li>
-            <li class="item">随笔</li>
-            <li class="item">新闻</li>
-            <li class="item">论坛</li>
-            <li class="item">招聘</li>
-            <li class="item">公告</li>
-        </ul>
-        <a href="" class="login">登录</a>
-        <a href="" class="register">注册</a>
+        <div class="banner_container">
+            <ul id="nav" class="nav">
+            <li class="banner"><img src="images/b1.jpg" alt="" class="bg"></li>
+            <li class="banner"><img src="images/b2.jpg" alt="" class="bg"></li>
+            <li class="banner"><img src="images/b3.jpg" alt="" class="bg"></li>
+            <li class="banner"><img src="images/b4.jpg" alt="" class="bg"></li>
+            </ul>
+        </div>
+        <div class="arrows">
+            <span class="arrow" style="float:left" onclick="changeItem(false)"> < </span>
+            <span class="arrow" style="float:right" onclick="changeItem(true)"> > </span>
+        </div>
+        <div class="nots">
+            <div class="not" onclick="changeItem2(this)"></div>
+            <div class="not" onclick="changeItem2(this)"></div>
+            <div class="not" onclick="changeItem2(this)"></div>
+            <div class="not" onclick="changeItem2(this)"></div>
+        </div>
     </header>
     <nav>
         <h4>窗口大小：</h4>
@@ -49,30 +58,8 @@
             <br/>
             <input type="reset" value="重设表单" />
         </form>
+        <video src=""></video>
     </nav>
-    <script type="text/javascript">
-    var nav = document.getElementById('nav');
-    for (var i = 0; i < 2; i++) {
-    	var e = document.createElement('li')
-    	e.className = 'item'
-    	e.innerHTML = 'item' + i
-    	nav.appendChild(e)
-     }
-    function init(){
-    	if(localStorage.getItem('username')){
-    		// alert('storage')
-    		var user = localStorage.getItem('username');
-    		document.getElementById('form1').username.value = user;
-    	}
-    }
-    var saveStorage = function() {
-        // alert('username')
-        localStorage = localStorage;
-        // alert('zjl')
-        var username = document.getElementById('form1').username.value;
-        localStorage.setItem('username', username)
-    }
-    </script>
 </body>
 
 </html>
