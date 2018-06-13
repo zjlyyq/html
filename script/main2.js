@@ -26,7 +26,15 @@ function addClass(e,newClassName) {
 function changeItem(num) {
     clearInterval(timer)
     // alert('点击了箭头')
-    currentIndex=num?currentIndex + 1:currentIndex - 1;
+    currentIndex=num?currentIndex + 5:currentIndex + 3;
+    currentIndex = currentIndex%4
+    addClass(nots[currentIndex],'current');
+    if (num) {
+        nots[(currentIndex+3)%4].setAttribute('class','not')
+    }else{
+        nots[(currentIndex+5)%4].setAttribute('class','not')
+    }
+    
     nav.style.transform = "translate(" + -1024 * (currentIndex%4) + "px)";
     timer = setInterval(f,4000);
 }
