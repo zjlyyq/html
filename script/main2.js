@@ -53,7 +53,7 @@ function changeItem2(e) {
     nav.style.transform = "translate(" + -1024 * (currentIndex%4) + "px)";
     timer = setInterval(f,4000);
 }
-// 初始化工作
+// 初始化
 function init(){
     //获得轮播图对象
     nav = document.getElementById('nav');
@@ -67,9 +67,7 @@ function init(){
 }
 
 var saveStorage = function() {
-    // alert('username')
     localStorage = localStorage;
-    // alert('zjl')
     var username = document.getElementById('form1').username.value;
     localStorage.setItem('username', username)
 }
